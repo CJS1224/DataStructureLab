@@ -7,11 +7,11 @@ class Queue
 {
     public :
         Queue() : top(0), bottom(0), tag(0) {}
-        bool isFull() { return this -> top % SIZE == this -> bottom ; }
-        bool isEmpty() { return this -> top == this -> bottom ; }
+        bool isFull() { return this -> top % SIZE == this -> bottom && this -> tag ; }
+        bool isEmpty() { return this -> top == this -> bottom && !tag ; }
         int enqueue(int data)
         {
-            if((isFull() && this -> tag) || (this -> top == SIZE - 1 && !this -> bottom)) return -1 ;
+            if(isFull() || (this -> top == SIZE - 1 && !this -> bottom)) return -1 ;
             else
             {
                 this -> top = (this -> top + 1) % SIZE ;
@@ -22,7 +22,7 @@ class Queue
         }
         int *dequeue()
         {
-            if(isEmpty() && !tag) return NULL ;
+            if(isEmpty()) return NULL ;
             else
             {
                 this -> bottom = (this -> bottom + 1) % SIZE ;
