@@ -4,10 +4,11 @@ using namespace std ;
 
 void allocArray(int ***p, int m, int n)
 {
-    *p = new int*[m * n] ;
+    int *P = new int[m * n] ;
+    *p = new int*[m] ;
     for(int i = 0 ; i < m ; i++)
     {
-        (*p)[i] = new int[n] ;
+        (*p)[i] = &P[i * n] ;
     }
 }
 
