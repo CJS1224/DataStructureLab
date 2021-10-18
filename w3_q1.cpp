@@ -6,7 +6,7 @@ using namespace std ;
 class Stack
 {
     public :
-        Stack() : top(-1) {}
+        Stack() : top(0) {}
         int push(int data)
         {
             if(top + 1 >= SIZE) return -1 ;
@@ -15,7 +15,7 @@ class Stack
         }
         int *pop()
         {
-            if(top == -1) return NULL ;
+            if(top == 0) return NULL ;
             return &(this -> data[--top]) ;
         }
     private :
