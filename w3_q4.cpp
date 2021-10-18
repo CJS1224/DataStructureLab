@@ -41,7 +41,6 @@ class Queue
                 int *value = &(deleteNode -> data) ;
                 this -> top = this -> top -> next ;
                 if(this -> top == NULL) this -> bottom = NULL ;
-                delete deleteNode ;
                 return value ;
             }
         }
