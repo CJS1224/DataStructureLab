@@ -6,17 +6,17 @@ using namespace std ;
 class Stack
 {
     public :
-        Stack() : top(0) {}
+        Stack() : top(-1) {}
         int push(int data)
         {
-            if(this -> top + 1 >= SIZE) return -1 ;
-            this -> data[this -> top++] = data ;
+            if(top + 1 >= SIZE) return -1 ;
+            this -> data[top++] = data ;
             return 1 ;
         }
         int *pop()
         {
-            if(this -> top == 0) return NULL ;
-            return &(this -> data[this -> top--]) ;
+            if(top == -1) return NULL ;
+            return &(this -> data[--top]) ;
         }
     private :
         int data[SIZE] ;
