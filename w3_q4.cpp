@@ -19,28 +19,28 @@ class Queue
             Node *node = new Node() ;
             node -> data = data ;
             node -> next = NULL ;
-            if(this -> top == NULL)
+            if(top == NULL)
             {
-                this -> top = node ;
-                this -> bottom = node ;
+                top = node ;
+                bottom = node ;
                 return 1 ;
             }
             else
             {
-                this -> bottom -> next = node ;
-                this -> bottom = node ;
+                bottom -> next = node ;
+                bottom = node ;
                 return 1 ;
             }
         }
         int *dequeue()
         {
-            if(this -> top == NULL) return NULL ;
+            if(top == NULL) return NULL ;
             else
             {
-                Node *deleteNode = this -> top ;
+                Node *deleteNode = top ;
                 int *value = &(deleteNode -> data) ;
-                this -> top = this -> top -> next ;
-                if(this -> top == NULL) this -> bottom = NULL ;
+                top = top -> next ;
+                if(top == NULL) bottom = NULL ;
                 return value ;
             }
         }
