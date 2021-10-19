@@ -9,7 +9,7 @@ class Queue
         Queue() : top(0), bottom(0), tag(0) {}
         int enqueue(int data)
         {
-            if((top % SIZE == bottom && tag) || (top == SIZE - 1 && !bottom)) return -1 ;
+            if((top % SIZE == bottom && tag) || (top == SIZE && !bottom)) return -1 ;
             else
             {
                 top = (top + 1) % SIZE ;
