@@ -9,7 +9,7 @@ class Stack
         Stack() : top(0) {}
         int push(int data)
         {
-            if(top + 1 >= SIZE) return -1 ;
+            if(top + 1 > SIZE) return -1 ;
             this -> data[top++] = data ;
             return 1 ;
         }
