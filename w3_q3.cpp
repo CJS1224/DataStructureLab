@@ -17,6 +17,7 @@ class Stack
         int push(int d)
         {
             Node *node = new Node() ;
+            if(node == NULL) return -1 ;
             node -> data = d ;
             node -> next = this -> data ;
             this -> data = node ;
