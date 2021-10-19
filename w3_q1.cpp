@@ -16,7 +16,7 @@ class Stack
         int *pop()
         {
             if(top == 0) return NULL ;
-            return &(this -> data[--top]) ;
+            return &(data[--top]) ;
         }
     private :
         int data[SIZE] ;
