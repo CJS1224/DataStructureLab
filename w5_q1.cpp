@@ -13,7 +13,7 @@ class Node
 class Set
 {
     public :
-        Set() : element(NULL) {}
+        Set() : element(NULL), beginning(NULL) {}
         int addElement(int e)
         {
             Node *node = new Node() ;
