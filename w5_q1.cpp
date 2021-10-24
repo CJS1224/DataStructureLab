@@ -78,7 +78,7 @@ class Set
             Set *i = new Set() ;
             u = this -> unions(b) ;
             i = this -> intersections(b) ;
-            for(Node *node = this -> getBeginning() ; node ; node = node -> next)
+            for(Node *node = u -> getBeginning() ; node ; node = node -> next)
             {
                 if(i -> addElement(node -> data)) return 0 ;
             }
