@@ -13,7 +13,7 @@ class Node
 class Set
 {
     public :
-        Set() : element(NULL), beginning(NULL) {}
+        Set() : element(NULL) {}
         int addElement(int e)
         {
             Node *node = new Node() ;
@@ -61,7 +61,11 @@ class Set
                 Node *n2 = b -> getBeginning() ;
                 while(n2)
                 {
-                    if(n1 -> data == n2 -> data) s -> addElement(n1 -> data) ;
+                    if(n1 -> data == n2 -> data)
+                    {
+                        s -> addElement(n1 -> data) ;
+                        break ;
+                    }
                     n2 = n2 -> next ;
                 }
                 n1 = n1 -> next ;
@@ -70,17 +74,13 @@ class Set
         }
         bool equivalent(const Set *b) const
         {
-            Node *n1 = getBeginning() ;
-            Node *n2 = b -> getBeginning() ;
-            while(n1)
+            Set *u = new Set() ;
+            Set *i = new Set() ;
+            u = this -> unions(b) ;
+            i = this -> intersections(b) ;
+            for(Node *node = new Node() ; node ; node = node -> next)
             {
-                if(!same(n1 -> data, n2)) return 0 ;
-                n1 = n1 -> next ;
-            }
-            while(n2)
-            {
-                if(!same(n2 -> data, n1)) return 0 ;
-                n2 = n2 -> next ;
+                if(i -> addElement(node -> data)) return 0 ;
             }
             return 1 ;
         }
