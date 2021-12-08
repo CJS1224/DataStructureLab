@@ -213,7 +213,7 @@ class Tree
                 if(i == n) return cur ;
                 for(int j = 0 ; j < cur -> size() ; j++)
                 {
-                    q.push((*cur)[i]) ;
+                    q.push((*cur)[j]) ;
                 }
                 i++ ;
             }
