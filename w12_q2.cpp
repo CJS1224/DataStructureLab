@@ -267,7 +267,7 @@ class Tree
         {
             for(size_t i = 0 ; i < cur -> size() ; i++)
             {
-                preorder((*cur)[i]) ;
+                postorder((*cur)[i]) ;
             }
             cout << cur -> getData() << endl ;
         }
